@@ -47,8 +47,6 @@ truth=eta(nx)
 #########################################
 h.it=CV.it(x,y,tem.ind=1:length(x),tem.kernel=0,tem.interval=c(0.01,2))
 IT.res=Fit.it(x,y,h.it,nx,tem.kernel=0)
-plot(x[x>=nx[1]&x<=nx[length(nx)]],y[x>=nx[1]&x<=nx[length(nx)]],ylab='y',xlab='x');lines(nx,truth,col="black",lwd=2.5);lines(nx,IT.res,col="yellow",lwd=2.5)
-legend('topleft',legend=c('True','Individual est','average est','product est','marginal intergration est'),col=c('black','yellow','red','green','blue'),lty=1,lwd=2.5)
 
 
 ########################################
@@ -57,6 +55,11 @@ legend('topleft',legend=c('True','Individual est','average est','product est','m
 c=2 # pool size
 gsize = n/c # number of groups
 groupy=colMeans(matrix(y,c,gsize)) # grouped dependent variable by pooling every c individual y's
+
+#plot
+plot(x[x>=nx[1]&x<=nx[length(nx)]],y[x>=nx[1]&x<=nx[length(nx)]],ylab='y',xlab='x');lines(nx,truth,col="black",lwd=2.5);lines(nx,IT.res,col="yellow",lwd=2.5)
+legend('topleft',legend=c('True','Individual est','average est','product est','marginal intergration est'),col=c('black','yellow','red','green','blue'),lty=1,lwd=2.5)
+
 
 ########################################
 # random pooling estimation
@@ -83,6 +86,7 @@ xh=x[order(x)]
 indJ=1:gsize
 grouphy=rowMeans(matrix(yh,gsize,c,byrow=TRUE))
 
+#plot
 plot(x[x>=nx[1]&x<=nx[length(nx)]],y[x>=nx[1]&x<=nx[length(nx)]],ylab='y',xlab='x');lines(nx,truth,col="black",lwd=2.5);lines(nx,IT.res,col="yellow",lwd=2.5)
 legend('topleft',legend=c('True','Individual est','average est','product est','marginal intergration est'),col=c('black','yellow','red','green','blue'),lty=1,lwd=2.5)
 
