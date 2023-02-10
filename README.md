@@ -33,7 +33,7 @@ y=eta(x)+rnorm(n,0,ystd)
 truth=eta(nx)
 ```
 Geberate data following Design 1 in the paper.
-![Optional Text](https://github.com/abc1m2x3c/APLMforPool/blob/f9a26ba36a96c11df126a8c39a8221cefd9094e6/DatasetScreenshot.PNG)
+
 
 ### Step 3. Fit the individual-level data using classic local linear regression
 
@@ -88,7 +88,7 @@ lpm_hat=Fit.mi.S1(x,c,groupy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=4)
 ```
 The results will be
-
+![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/d91c52e326e0d6167ccecdcb38c958d3ab6ae2bc/Random.png)
 ### Step 4. Homogeneous pool the individual-level data, fit the data using three proposed estimators
 ```
 ########################################
@@ -117,5 +117,6 @@ h.m.S1=CV.mi.S1(xh,c,grouphy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the samp
 lpm_hat=Fit.mi.S1(xh,c,grouphy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=2.5)
 ```
-
+The results will be
+![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/d91c52e326e0d6167ccecdcb38c958d3ab6ae2bc/Random.png)
 
