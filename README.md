@@ -2,7 +2,7 @@
 This repository contains example codes for 'Local polynomial regression for pooled response data' by Dewei Wang, Xichen Mou, Xiang Li, and Xianzheng Huang
 
 ## A simple example 
-Below are example codes for simulation study (Design 1) in the paper. The sample codes include funnctions of the local linear estimator for individual-level data, three pooled-data estimators in the paper (average-weighted estimator, product-weighted estimator, and marginal-integration estimator), and the corresponding bandwidth selection methods using cross validation. All codes below are included in 'Example.R' in this repository.
+Below are example codes for simulation study (Design 1) in the paper. The sample codes include funnctions of the local linear estimator for individual-level data, three pooled data estimators proposed in the paper (average-weighted estimator, product-weighted estimator, and marginal-integration estimator), and the corresponding bandwidth selection methods using cross validation. All codes below are included in 'Example.R' in this repository.
 
 ### Step 1. Clean the memory, install (if has not) and load the required R packages, and source the code in this repository  
 ```
