@@ -49,6 +49,10 @@ Geberate data following Design 1 in the paper.
 #output:
 # function h.* returns the optimal bandwidth based on the proposed cross validatiion method
 # function Fit.* returns the fitted value at the vector nx
+
+########################################
+# Fitting individual data
+#########################################
 h.it=CV.it(x,y,tem.ind=1:length(x),tem.kernel=0,tem.interval=c(0.01,2))
 IT.res=Fit.it(x,y,h.it,nx,tem.kernel=0)
 #plot 
@@ -86,8 +90,7 @@ lines(nx,lpm_hat,col="blue",lwd=4)
 The results will be
 
 ### Step 4. Homogeneous pool the individual-level data, fit the data using three proposed estimators
-'''
-
+```
 ########################################
 # Data generation for homogeneous pooling
 ########################################
@@ -113,6 +116,6 @@ lines(nx,lpp_hat,col="green",lwd=2.5)
 h.m.S1=CV.mi.S1(xh,c,grouphy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the sample weight
 lpm_hat=Fit.mi.S1(xh,c,grouphy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=2.5)
-'''
+```
 
 
