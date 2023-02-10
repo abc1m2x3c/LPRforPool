@@ -18,6 +18,7 @@ source('src.R')
 
 ### Step 2. Generate individual-level data
 ```
+set.seed(12345)
 n = 600 # sample size
 eta=function(x){
   return(x^3*exp(x^4/1000))
@@ -116,5 +117,4 @@ h.m.S1=CV.mi.S1(xh,c,grouphy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the samp
 lpm_hat=Fit.mi.S1(xh,c,grouphy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=2.5)
 ```
-![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/da66bda03a93fbf47d6183283c9c0aa2aa91b604/Homogeneous.png)
-
+![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/b825c33ef055f9b2fda2447ea5a7e32492512010/HomogeneousPooling.png)
