@@ -75,7 +75,7 @@ h.m.S1=CV.mi.S1(x,c,groupy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the sample
 lpm_hat=Fit.mi.S1(x,c,groupy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=2.5)
 
-https://github.com/abc1m2x3c/LPRforPool/blob/6ea1da99688860f2ec5a0ef5870c89047c596126/RandomPooling.png
+![](https://github.com/abc1m2x3c/LPRforPool/blob/6ea1da99688860f2ec5a0ef5870c89047c596126/RandomPooling.png)
 
 ########################################
 # Data generation for homogeneous pooling
