@@ -87,7 +87,7 @@ h.m.S1=CV.mi.S1(x,c,groupy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the sample
 lpm_hat=Fit.mi.S1(x,c,groupy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=4)
 ```
-![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/d91c52e326e0d6167ccecdcb38c958d3ab6ae2bc/Random.png)
+![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/33b71e27488f60012b73bb5f4bb1b9522f74f0cd/RandomPooling.png)
 ### Step 4. Homogeneous pool the individual-level data, fit the data using three proposed estimators
 ```
 ########################################
