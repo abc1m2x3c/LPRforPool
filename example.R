@@ -12,6 +12,7 @@ source("Pool.R")
 ########################################
 # Data generation
 ########################################
+set.seed(12345)
 n = 600 # sample size
 eta=function(x){
   return(x^3*exp(x^4/1000))
