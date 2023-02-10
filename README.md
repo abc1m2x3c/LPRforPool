@@ -33,7 +33,7 @@ ystd=0.6
 y=eta(x)+rnorm(n,0,ystd)
 truth=eta(nx)
 ```
-Geberate data following Design 1 in the paper.
+Generate data following Design 1 in the paper.
 
 
 ### Step 3. Fit the individual-level data using classic local linear regression
@@ -56,13 +56,9 @@ Geberate data following Design 1 in the paper.
 #########################################
 h.it=CV.it(x,y,tem.ind=1:length(x),tem.kernel=0,tem.interval=c(0.01,2))
 IT.res=Fit.it(x,y,h.it,nx,tem.kernel=0)
-#plot 
-plot(x[x>=nx[1]&x<=nx[length(nx)]],y[x>=nx[1]&x<=nx[length(nx)]],ylab='y',xlab='x');lines(nx,truth,col="black",lwd=4);lines(nx,IT.res,col="yellow",lwd=4)
-legend('topleft',legend=c('True','Individual est','average est','product est','marginal intergration est'),col=c('black','yellow','red','green','blue'),lty=1,lwd=4)
-
 ```
 
-### Step 4. Randomly pool the individual-level data, fit the data using three proposed estimators
+### Step 4. Randomly pool the individual-level data and fit the data using three proposed estimators
 ```
 ########################################
 # Data generation for random pooling
@@ -70,6 +66,11 @@ legend('topleft',legend=c('True','Individual est','average est','product est','m
 c=2 # pool size
 gsize = n/c # number of groups
 groupy=colMeans(matrix(y,c,gsize)) # grouped dependent variable by pooling every c individual y's
+
+#plot 
+plot(x[x>=nx[1]&x<=nx[length(nx)]],y[x>=nx[1]&x<=nx[length(nx)]],ylab='y',xlab='x');lines(nx,truth,col="black",lwd=4);lines(nx,IT.res,col="yellow",lwd=4)
+legend('topleft',legend=c('True','Individual est','average est','product est','marginal intergration est'),col=c('black','yellow','red','green','blue'),lty=1,lwd=4)
+
 
 ########################################
 # random pooling estimation
@@ -89,7 +90,7 @@ lpm_hat=Fit.mi.S1(x,c,groupy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=4)
 ```
 ![Optional Text](https://github.com/abc1m2x3c/LPRforPool/blob/33b71e27488f60012b73bb5f4bb1b9522f74f0cd/RandomPooling.png)
-### Step 4. Homogeneous pool the individual-level data, fit the data using three proposed estimators
+### Step 5. Homogeneous pool the individual-level data and fit the data using three proposed estimators
 ```
 ########################################
 # Data generation for homogeneous pooling
@@ -99,6 +100,7 @@ xh=x[order(x)]
 indJ=1:gsize
 grouphy=rowMeans(matrix(yh,gsize,c,byrow=TRUE))
 
+#plot
 plot(x[x>=nx[1]&x<=nx[length(nx)]],y[x>=nx[1]&x<=nx[length(nx)]],ylab='y',xlab='x');lines(nx,truth,col="black",lwd=2.5);lines(nx,IT.res,col="yellow",lwd=2.5)
 legend('topleft',legend=c('True','Individual est','average est','product est','marginal intergration est'),col=c('black','yellow','red','green','blue'),lty=1,lwd=2.5)
 
