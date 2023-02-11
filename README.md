@@ -13,7 +13,9 @@ rm(list=ls(all=TRUE))
 library(maxLik)
 library(Rcpp)
 library(RcppArmadillo)
-source('src.R')
+
+sourceCpp("pool.cpp")
+source("Pool.R")
 ```
 
 ### Step 2. Generate individual-level data
