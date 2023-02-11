@@ -77,6 +77,7 @@ legend('topleft',legend=c('True','Individual est','average est','product est','m
 ########################################
 # random pooling estimation
 ########################################
+# average weighted estimator 
 h.s=CV.pool(x,c,groupy,tem.ind=1:gsize,tem.kernel=0,tem.pool=0,tem.interval=c(0.01,2))
 lps_hat=Fit.pool(x,c,groupy,h.s,nx,tem.kernel=0,tem.pool=0)
 lines(nx,lps_hat,col="red",lwd=4)
@@ -86,7 +87,7 @@ h.p=CV.pool(x,c,groupy,1:gsize,tem.kernel=0,tem.pool=1,tem.interval=c(0.01,2))
 lpp_hat=Fit.pool(x,c,groupy,h.p,nx,tem.kernel=0,tem.pool=1)
 lines(nx,lpp_hat,col="green",lwd=4)
 
-# marginal integration estimator; 
+# marginal integration estimator
 h.m.S1=CV.mi.S1(x,c,groupy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the sample weight
 lpm_hat=Fit.mi.S1(x,c,groupy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=4)
@@ -109,14 +110,17 @@ legend('topleft',legend=c('True','Individual est','average est','product est','m
 ########################################
 # homogeneous pooling estimation
 ########################################
+# average weighted estimator 
 h.s=CV.pool(xh,c,grouphy,indJ,tem.kernel=1,tem.pool=0,tem.interval=c(0.01,2))
 lps_hat=Fit.pool(xh,c,grouphy,h.s,nx,tem.kernel=0,tem.pool=0)
 lines(nx,lps_hat,col="red",lwd=2.5)
 
+# product weighted estimator 
 h.p=CV.pool(xh,c,grouphy,indJ,tem.kernel=1,tem.pool=1,tem.interval=c(0.01,2))
 lpp_hat=Fit.pool(xh,c,grouphy,h.p,nx,tem.kernel=0,tem.pool=1)
 lines(nx,lpp_hat,col="green",lwd=2.5)
 
+# marginal integration estimator
 h.m.S1=CV.mi.S1(xh,c,grouphy,tem.kernel=0,tem.interval=c(0.01,2)) #W is the sample weight
 lpm_hat=Fit.mi.S1(xh,c,grouphy,h.m.S1,nx,tem.kernel=0)
 lines(nx,lpm_hat,col="blue",lwd=2.5)
